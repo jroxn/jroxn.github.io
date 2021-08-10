@@ -1,0 +1,1162 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="进程管理, Linux Python Shell Devops Kubernetes Hadoop">
+    <meta name="description" content="任何值的拥有的都是值得等待的">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>进程管理 | Roxn</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/jquery/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Roxn</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Roxn</div>
+        <div class="logo-desc">
+            
+            任何值的拥有的都是值得等待的
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+
+    </ul>
+</div>
+
+
+        </div>
+
+    </nav>
+
+</header>
+
+    
+<script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/featureimages/17.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">进程管理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">系统</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/linux/" class="post-category">
+                                linux
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-29
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-08-10
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <!-- 文章头部设置 -->
+
+<h1 id="进程概念"><a href="#进程概念" class="headerlink" title="进程概念"></a>进程概念</h1><p>内核的作用：进程管理、文件系统、网络功能、内存管理、驱动程序、安全功能等<br>Process（进程）：运行中的程序的一个副本，是被载入内存的一个指令集合<br>程序被触发后，执行者的权限与属性、程序的代码所需资料都会被载入到内存中，操作系统给予这些内存单元一个识别码（pid），可以说，进程就是一个正在运作的程序。  </p>
+<h2 id="进程存在生命周期"><a href="#进程存在生命周期" class="headerlink" title="进程存在生命周期"></a>进程存在生命周期</h2><p>Program（程序）：通常为binary program , 放置在存储媒介中，（如硬盘，光盘等），以实体文件的形态存在。<br>Thread（线程）：是操作系统能够进行运算调度的最小单位。它被包含在进程之中，是行程中的实际运作单位。一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并行多个线程，每条线程并行执行不同的任务。<br>一般，线程具有就绪、阻塞和运行三种基本状态  </p>
+<h2 id="进程创建："><a href="#进程创建：" class="headerlink" title="进程创建："></a>进程创建：</h2><p>init ：第一个进程<br>“父子关系”<br>进程都是由其父进程创建，由COW技术实现（写时复制）（即程序为“父子关系”时，其子进程未运行时，父进程只对子进程标记，子进程运行时，才会复制子进程所需的运行文件到/porc/PID下）  </p>
+<h2 id="进程优先级："><a href="#进程优先级：" class="headerlink" title="进程优先级："></a>进程优先级：</h2><p>系统优先级：数字越小，优先级越高<br>0-139（CentOS4,5）：各有140个运行队列和过期队列<br>0-98,99（CentOS6）<br>实时优先级：99-0：值最大优先级最高<br>Nice值：-20到19对应系统优先级100-139（CentOS4,5）或99（CentOS6）  </p>
+<h2 id="进程相关概念"><a href="#进程相关概念" class="headerlink" title="进程相关概念"></a>进程相关概念</h2><h3 id="进程内存："><a href="#进程内存：" class="headerlink" title="进程内存："></a>进程内存：</h3><p>Page Frame ：页框，用于存储页面数据，存储Page 4K（内存有大小，最小的存储为Page 4K）<br>LRU ：近期最少使用算法：释放内存物理地址空间（实际使用的内存空间RSS）和线性地址空间（允许使用的内存空间VSZ）（通过LRU算法将不经常使用的、老的进程放到swap分区）<br>MMU：负责转换线性地址和物理地址（记录了进程的线性空间和物理空间大小）<br>IPC：进程间通讯<br>同一主机上：<br>signal：发信号<br>shm：共享内存（进程同时使用一块内存）<br>semophore：信号量，一种计数器（可以对访问的资源加锁）：多个进程访问文件时，进程可以对访问的文件加锁，其它进程不能访问该文件。<br>不同主机上：<br>rpc：进程间远程调用（unix）<br>socket：IP和端口号<br><code>netstat -ntpl</code>（netstat用于显示网络状态）（-a可以查看所有连线中的socket）  </p>
+<h3 id="进程状态"><a href="#进程状态" class="headerlink" title="进程状态"></a>进程状态</h3><p>Linux内核：抢占式多任务（进程在内存中“排队”，前面的进程运行完，后面的进程会立刻运行）  </p>
+<h3 id="进程类型："><a href="#进程类型：" class="headerlink" title="进程类型："></a>进程类型：</h3><p>守护进程（daemon）：在系统引导过程中启动的进程，和终端无关<br>前台进程：跟终端相关，通过终端启动的进程<br>注意：两者可以相互转化（通过命令，可以将前台进程放到后台）  </p>
+<h3 id="进程状态："><a href="#进程状态：" class="headerlink" title="进程状态："></a>进程状态：</h3><p>执行<code>ps aux</code>命令STAT栏可查看进程状态  </p>
+<p>R：运行态：running，正在运行<br>&emsp;&emsp;就绪态：ready<br>&emsp;&emsp;睡眠态：<br>S：可中断：interruptable<br>D：不可中断：uninterruptable<br>T：停止态：stopped，暂停于内存中，但不会被调用，除非手动启动<br>Z：僵死态：zombie，结束进程，父进程结束前，子进程不关闭（父进程关闭子进程未关）  </p>
+<h2 id="系统管理工具"><a href="#系统管理工具" class="headerlink" title="系统管理工具"></a>系统管理工具</h2><p>进程的分类：<br>&emsp;&emsp;CPU-Bound ：CPU密集型，非交互<br>&emsp;&emsp;IO-Bound ：IO密集型，交互<br>Linux系统状态的查看及管理工具：<code>pstree</code>、<code>ps</code>、<code>pidof</code>、<code>pgrep</code>、<code>top</code>、<code>pmap</code>、<code>vmstat</code>、<code>dstat</code>、<code>kill</code>、<code>pkill</code>、<code>job</code>、<code>bg</code>、<code>fg</code>、<code>nohup</code><br><code>pstree</code>：命令，显示正在运行的程序树（父子关系图）<br><code>pstree -p</code>：显示进程的pid  </p>
+<p>ps：显示进程状态<br><code>ps 选项</code><br>Linux系统各进程的相关信息均保存在/proc/PID目录下的各文件中<br>列举进程ps<br>适用ps来查看进程信息（回车时刻，瞬间）<br>支持选项：UNIX选项 如-A -e<br>默认显示当前终端中的进程<br><code>a</code>：所有终端中的进程<br><code>x</code>：包括不链接终端的进程（守护进程）<br><code>u</code>：显示所有者信息<br><code>f</code>：显示进程的父进程<br><code>o</code>：属性…：显示定制信息（如pid、comm、%cpu、%mem、state、tty、euser、ruser、nice）  </p>
+<p><code>ps aux</code> 每个字段的意思<br>| USER           | PID             | %CPU          | %MEM           | VSZ                   | RSS                   | TTY     | STAT         | START               | TIME           | COMMAND             |<br>| :————- | :————– | :———— | :————- | :——————– | :——————– | :—— | :———– | :—————— | :————- | :—————— |<br>| 进程拥有者user | 任务进程的IDpid | CPU占用率%cpu | 内存使用率%mem | 许诺的运行内存大小vsz | 实际使用的内存大小rss | 终端tty | 进程状态stat | 进程开始的时间start | 执行的时间time | 所执行的指令command |</p>
+<p>进程状态stat：详细：<br>R：正在运行<br>S：可中断的睡眠<br>D：不可中断的睡眠<br>T：停止态<br>Z：僵死态<br>+：前台进程<br>l：多线程进程<br>N：低优先级进程<br>&lt;：高优先级进程<br>s：session leader，会话（子进程）发起者<br>常用组合：<code>-ef</code><br>| UID    | PID    | PPID     | C               | STIME                | TTY                                        | TIME            | CMD          |<br>| :—– | :—– | :——- | :————– | :——————- | :—————————————– | :————– | :———– |<br>| 用户名 | 进程ID | 父进程ID | 进程占CPU百分比 | 进程启动到现在的时间 | 该进程在哪个终端上运行（？代表与终端无关） | 使用掉的CPU时间 | 命令名和参数 |</p>
+<p><code>-e</code>：显示所有进程<br><code>-f</code>：显示完整格式程序信息<br>常用组合：<code>-eFH</code><br>| UID    | PID    | PPID     | C               | SZ                       | RSS                    | PSR                                | STIME                | TTY                                        | TIME            | CMD          |<br>| :—– | :—– | :——- | :————– | :———————– | :——————— | :——————————— | :——————- | :—————————————– | :————– | :———– |<br>| 用户名 | 进程ID | 父进程ID | 进程占CPU百分比 | 进程的核心印象的页面大小 | 进程实际使用的内存大小 | 绑定内核线程的处理器的逻辑处理器号 | 进程启动到现在的时间 | 该进程在哪个终端上运行（？代表与终端无关） | 使用掉的CPU时间 | 命令名和参数 |</p>
+<p><code>-F</code>：显示更完整格式的进程信息<br><code>-H</code>：以进程层级格式显示进程相关信息<br>常用组合：<code>aux</code> 、<code>axo</code>（有o选项需要在后面指明参数）  </p>
+<h1 id="进程及系统相关工具"><a href="#进程及系统相关工具" class="headerlink" title="进程及系统相关工具"></a>进程及系统相关工具</h1><p>ni：nice值<br>pri：priority优先级<br>psr：processor CPU编号<br>rtprio：实时优先级  </p>
+<h2 id="搜索进程"><a href="#搜索进程" class="headerlink" title="搜索进程"></a>搜索进程</h2><p>最灵活：<code>ps 选项 | 其它命令</code><br>按预定义的模式：<code>pgrep</code><br><code>pgrep 选项 模式</code><br><code>-u</code>：用户名/ID ：生效用户<br><code>-U</code>：用户名/ID ：命令发起者<br><code>-t</code>：终端：与指定终端相关的进程<br><code>-l</code>：显示进程名<br><code>-a</code>：显示完整格式的进程名（CentOS7）<br><code>-P pid</code>：显示指定进程的子进程  </p>
+<h2 id="系统工具"><a href="#系统工具" class="headerlink" title="系统工具"></a>系统工具</h2><p><code>uptime</code>：显示当前时间，系统已启动的时间、当前上线人数，系统平均负载（1、5、15分钟的平均负载，一般不会超过1）<br>系统平均负载：指定在特定时间间隔内运行队列中的平均进程数<br>如果每个CPU内核的当前活动进程数不大于3的话，那么系统的性能良好。<br>如果每个CPU内核的任务数大于5，那么这台机器的性能有严重问题。<br>如果Linux主机是1个双核CPU的话，当load average为6的时候说明机器已经被充分使用了。  </p>
+<h2 id="进程管理工具"><a href="#进程管理工具" class="headerlink" title="进程管理工具"></a>进程管理工具</h2><p><code>top</code>：有许多内置命令：<br>排序：<br><code>P</code>：以占据的CPU百分比，%CPU<br><code>M</code>：占据内存百分比，%MEM<br><code>T</code>：累积占据CPU时长，TIME+  </p>
+<p>首部信息显示：<br><code>uptime</code>信息：<code>l</code>命令<br>tasks及cpu信息：<code>t</code>命令<br>cpu分别显示1（数字）<br>memory信息：<code>m</code>命令<br>退出命令：<code>q</code><br>修改刷新时间间隔：<code>s</code><br>终止指定进程：<code>k</code><br>保存文件：<code>w</code>  </p>
+<h3 id="top栏位信息简介"><a href="#top栏位信息简介" class="headerlink" title="top栏位信息简介"></a>top栏位信息简介</h3><p>第一行：系统运行时间<br>系统当前时间、系统已运行时间、当前登录系统的用户数量、系统负载（1,5,15分钟的平均值）  </p>
+<p>第二行：运行进程相关<br>所有启动的进程数、正在运行的进程数、挂起的进程数、停止的进程数、僵死进程数  </p>
+<p>第三行：CPU相关<br>用户空间占CPU百分比、内核空间占CPU百分比、调整过nice时间的进程占CPU百分比、空闲CPU百分比、等待IO占CPU的百分比、CPU服务于硬中断时间所占百分比、CPU服务于软中断时间所占百分比、被虚拟机偷走时间的百分比  </p>
+<p>第四行：内存相关<br>物理内存总量、已用物理内存、空闲物理内存、内核缓存内存量  </p>
+<p>第五行：交换分区相关<br>交换分区总量、已使用交换分区总量、空闲交换分区总量、缓冲的交换分区总量白色块：具体进程信息  </p>
+<table>
+<thead>
+<tr>
+<th align="left">PID</th>
+<th align="left">USER</th>
+<th align="left">PR</th>
+<th align="left">NI</th>
+<th align="left">VIRT</th>
+<th align="left">RES</th>
+<th align="left">SHR</th>
+<th align="left">S</th>
+<th align="left">%CPU</th>
+<th align="left">%MEM</th>
+<th align="left">TIME+</th>
+<th align="left">COMMAND</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">进程ID</td>
+<td align="left">进程所有者user</td>
+<td align="left">优先级pr</td>
+<td align="left">nice值</td>
+<td align="left">进程使用的虚拟内存总量virt</td>
+<td align="left">进程使用的,未被换出的物理内存大小res</td>
+<td align="left">共享内存大小shr</td>
+<td align="left">进程状态s</td>
+<td align="left">上次更新到现在的CPU时间占用百分比%cpu</td>
+<td align="left">进程使用的物理内存百分比%mem</td>
+<td align="left">进程使用CPU总时间time+</td>
+<td align="left">命令名，命令行command</td>
+</tr>
+</tbody></table>
+<h3 id="内存工具"><a href="#内存工具" class="headerlink" title="内存工具"></a>内存工具</h3><p>vmstat 命令：虚拟内存信息<br><code>vmstat -s</code>：显示内存的统计数据<br><code>vmstat 2 5</code>：间隔2秒，信息刷新5次  </p>
+<p>procs：<br>r：等待运行的进程的个数，和核心数有关<br>b：处于不可中断睡眠态的进程个数（被阻塞的队列的长度）  </p>
+<p>memory：<br>swpd：交换内存的使用总量<br>free：空闲物理内存总量<br>buffer：用于buffer的内存总量<br>cache：用于cache的内存总量  </p>
+<p>swap：<br>si：从磁盘交换进内存的数据速率kb/s<br>so：从内存交换至磁盘的数据速率kb/s  </p>
+<p>io：<br>bi：从块设备读入数据到系统的速率kb/s<br>bo：保存数据至块设备的速率kb/s  </p>
+<p>system：<br>in：中断速率，包括时钟<br>cs：进程切换速率  </p>
+<p>cpu：<br>us：用户进程执行时间百分比<br>sy：内核系统进程执行时间百分比<br>id：空闲时间百分比<br>wa：IO等待时间百分比<br>st：虚拟内存偷走时间百分比  </p>
+<h3 id="进程管理工具-1"><a href="#进程管理工具-1" class="headerlink" title="进程管理工具"></a>进程管理工具</h3><p>按PID：<code>kill pid</code><br>按名称：<code>killall 进程名</code><br>按模式：<code>pkill 选项 模式</code><br><code>pkill -u 用户名/uid</code>：生效者<br><code>pkill -U 用户名/uid</code>：进程发起者<br><code>pkill -t 终端</code>：与指定终端相关的进程  </p>
+<h3 id="作业管理"><a href="#作业管理" class="headerlink" title="作业管理"></a>作业管理</h3><p>Linux的作业控制<br>前台作业：通过终端启动，且启动后一直占据终端<br>后台作业：可通过终端启动，但启动后即转入后台运行（释放终端）<br>Ctrl+z ：运行中的作业放到后台（停止态）<br>命令 &amp; ：未启动的作业放到后台运行（和Ctrl+z有区别）  </p>
+<p>（[1] dd命令Ctrl+z [2] dd命令 &amp; [3] cat 命令Ctrl+z [4] cat命令 &amp; ）<br>后台作业虽然被送往后台运行，但其依然与终端相关；退出终端，将关闭后台作业。如果希望送往后台后，剥离与终端的关系使用<br>nohup 命令 &amp;  </p>
+<h3 id="查看所有作业："><a href="#查看所有作业：" class="headerlink" title="查看所有作业："></a>查看所有作业：</h3><p><code>jobs</code>、<code>jobs -l</code>显示更详细<br>作业控制：<br><code>fg #</code>：把指定的后台作业调回前台<br><code>bg #</code>：送往后台的作业继续运行<br><code>kill %#</code>：终止指定的作业  </p>
+<p>进程优先级<br>进程优先级调整：<br>静态优先级：100-139<br>进程默认启动时的nice值为0，优先级为120<br>只有根用户才能调低nice值（提高优先级）  </p>
+<p><code>nice</code>命令：<br><code>nice 选项 命令</code> （未运行的命令）<br>例：<code>nice -n -5 ping 127.0.0.1</code>（将命令ping 127.0.0.1的nice值调为-5）  </p>
+<p><code>renice</code>命令：<br><code>renice</code>选项 PID（运行中的命令）<br>例：<code>renice -n -20 1234</code>（将指定PID号的进程，nice值调整为-20）  </p>
+<p><code>ps axo pid,comm,ni</code> ：查看pid，命令，nice值  </p>
+<h1 id="计划任务"><a href="#计划任务" class="headerlink" title="计划任务"></a>计划任务</h1><p>linux 任务计划、周期性任务执行<br>未来的某时间点执行任务：<code>at</code><br>周期性运行某任务：<code>cron</code>  </p>
+<h2 id="at任务"><a href="#at任务" class="headerlink" title="at任务"></a>at任务</h2><p><code>at命令：at [option] TIME</code><br>常用选项：<br><code>-V</code>：显示版本信息<br><code>-l</code>：列出指定队列中等待运作的作业，相当于<code>atq</code><br><code>-d</code>：删除指定的作业，相当于<code>atrm</code><br><code>-c</code>：查看具体作业任务<br><code>-f file</code>：从指定文件中读取任务<br><code>-m</code>：当任务被完成之后，将给用户发送邮件，即使没有标准输出  </p>
+<p>注意：作业执行命令的结果中的标准输出和错误以邮件通知给相关用户<br>TIME：定义出什么时候进行<code>at</code>这项任务的时间<br><code>HH:MM [YYYY-mm-dd]</code><br><code>noon,midnight,teatime(4pm)</code><br><code>tomorrow</code><br><code>now+#&#123;minutes,hours,days,OR weeks&#125;</code>  </p>
+<p><code>at</code>时间格式<br><code>HH:MM 02:00</code><br>在今日的<code>HH:MM</code>进行，若时刻已过，则明天此时执行任务<br><code>HH:MM YYYY-MM-DD 04:00 2016-09-20</code><br>规定在某年某月的某一天的特殊时刻进行该项任务<br><code>HH:MM[am|pm] [month] [date]</code><br><code>04pm march 17</code><br><code>17:20 tomorrow</code>  </p>
+<p><code>HH:MM[am|pm] + number [minutes|hours|days|weeks]</code><br>在某个时间点再加几个时间后才进行该项任务<br><code>now + 5 minutes</code><br><code>04pm + 3 days</code>  </p>
+<p>执行方式：  </p>
+<ol>
+<li>交互式  </li>
+<li>输入重定向  </li>
+<li><code>at -f 文件</code>  </li>
+</ol>
+<p>依赖与<code>atd</code>服务，需要启动才能实现<code>at</code>任务<br>通过<code>/etc/at.&#123;allow,deny&#125;</code>控制用户是否能执行<code>at</code>任务，先寻找<code>/etc/at.allow</code>找，不存在就寻找<code>/etc/at.deny</code>这个文件，若写在这个<code>at.deny</code>用的使用者则不能使用<code>at</code>，而没有在这个<code>at.deny</code>文件的使用者则可使用<code>at</code>命令，如果两个文件都不存在，则只有<code>root</code>可以使用<code>at</code>这个命令  </p>
+<h2 id="周期性计划任务cron"><a href="#周期性计划任务cron" class="headerlink" title="周期性计划任务cron"></a>周期性计划任务cron</h2><p>相关的程序包：<br><code>cronie</code>：主程序包，提供<code>crond</code>守护进程及相关辅助工具<br><code>cronie-anacron</code>：<code>cronie</code>的补充程序，用于监控<code>cronie</code>任务执行状况，如<code>cronie</code>中的任务在过去该运行的时间点未能正常运行，则<code>anacron</code>会随后启动一次此任务<br><code>crontabs</code>：包含<code>CentOS</code>提供系统维护任务<br>确保<code>crond</code>守护处于运行状态<br><code>service crond status</code><br>计划周期性执行的任务交给<code>crond</code>，到指定时间会自动运行<br>系统<code>cron</code>任务：系统维护作业<br><code>/etc/crontab</code><br>用户<code>cron</code>任务：<br><code>crontab</code>命令<br>日志：<code>/var/log/cron</code><br>系统<code>cron</code>任务：<code>/etc/crontab</code><br>注释行以<code>#</code>开头  </p>
+<p><code>* * * * *（分时日月周）</code><br><code>*</code>表示”每”<br><code>* * * * *</code>每一分钟执行一次周期任务<br><code>2 * * * *</code>每小时02分执行一次周期任务<br><code>0 2 * * *</code>每天2点0分执行一次周期任务<br><code>0 0 */3 * *</code>每3天整执行一次周期任务<br><code>*/3 */2 */3 * *</code>每隔3天的每隔2小时的每隔3分钟执行一次周期任务<br><code>0 0 1 6 *</code>每到6月1日0时0分执行一次周期任务<br><code>* 3-8 * * */3</code>每隔3周的3到8点整每分钟执行一次周期任务<br><code>0 0 * * 0,3,5</code>每个周日，周三，周五0时0分执行一次周期任务<br>分（0-59），时（0-23），日（1-31），月（1-12），周（0-6）<br>系统的计划任务：  </p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;etc&#x2F;crontab  
+&#x2F;etc&#x2F;cron.d&#x2F;  
+&#x2F;etc&#x2F;cron.hourly&#x2F;  
+&#x2F;etc&#x2F;cron.daily&#x2F;  
+&#x2F;etc&#x2F;cron.weekly&#x2F;  
+&#x2F;etc&#x2F;cron.monthly&#x2F;  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>用户<code>cron</code>：<br><code>crontab</code>命令定义，每个用户都有专用的<code>cron</code>任务文件：<br><code>/var/spool/cron/USERNAME</code><br><code>crontab</code>命令：<br><code>crontab [-u user] [-l | -r | -e] [-i]</code><br><code>-l</code>列出所有任务<br><code>-e</code>编辑任务<br><code>-r</code>移除所有任务<br><code>-i</code>同<code>-r</code>一同使用，以交互模式移除指定任务<br><code>-u user</code>仅<code>root</code>可运行，指定用户管理<code>cron</code>任务<br>控制用户执行计划任务：<br><code>/etc/cron.&#123;allow,deny&#125;</code><br>注意：运行结果的标准输出和错误以邮件通知给相关用户  </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">command</span> <span class="token operator">></span> /dev/null  
+<span class="token builtin class-name">command</span> <span class="token number">2</span><span class="token operator">&amp;></span><span class="token number">1</span> /dev/null  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>对于<code>cron</code>任务来讲，<code>%</code>号有特殊用途，如果在命令中要使用<code>%</code>，则需要转义，不过，如果把<code>%</code>号放置于单引号中，也可以不用转义  </p>
+<p>如果您有 补充 &amp; 更正 的意见和建议请留言评论，谢谢~  </p>
+
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Poyais</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://roxn.cn/posts/2b2d.html">https://roxn.cn/posts/2b2d.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Poyais</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">系统</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/b24e.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/drawing-bed/featureimages/3.jpg" class="responsive-img" alt="引导程序">
+                        
+                        <span class="card-title">引导程序</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            引导程序与服务控制
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/linux/" class="post-category">
+                                    linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">系统</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/2039.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="文件管理">
+                        
+                        <span class="card-title">文件管理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            高级文件管理
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/linux/" class="post-category">
+                                    linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">系统</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Roxn<br />'
+            + '文章作者: Poyais<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+    <footer class="page-footer bg-color">
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2021</span>
+            
+
+            
+                <span id="icp"><img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="https://beian.miit.gov.cn" target="_blank">京ICP备20015925号</a>
+            </span>
+            
+            <br>
+
+<!--             <span id="year">2020</span>
+            <a href="/about" target="_blank">Poyais</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br> -->
+
+
+            <!-- 运行天数提醒. -->
+            <span <i class="fas fa-desktop"></i> </span>
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    function siteTime() {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2020";
+                        var startMonth = "8";
+                        var startDate = "1";
+                        var startHour = "8";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+                        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+                        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '小破站已勉强苟活 ' + diffDays + ' 天 ' + diffHours + ' 小时 ' + diffMinutes + ' 分钟 ' + diffSeconds + ' 秒🎊';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '小破站已勉强苟活 ' + diffYears + ' 年 ' + diffDays + ' 天 ' + diffHours + ' 小时 ' + diffMinutes + ' 分钟 ' + diffSeconds + ' 秒🎊';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    setInterval(siteTime, 1000);
+                </script>
+            <br>
+            
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点字数:&nbsp;<span
+                        class="white-color">153.9k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">🎉
+                <i class="far fa-eye"></i>&nbsp;访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">🎉
+                <i class="fas fa-users"></i>&nbsp;访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>🎉
+            </span>
+            
+
+
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的Git仓库" data-position="top" data-delay="50">
+        <i class="fab fa-git"></i>
+    </a>
+
+
+
+    <a href="mailto:158970251@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=158970251" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 158970251" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

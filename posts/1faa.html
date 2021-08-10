@@ -1,0 +1,1094 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="安全和加密, Linux Python Shell Devops Kubernetes Hadoop">
+    <meta name="description" content="任何值的拥有的都是值得等待的">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>安全和加密 | Roxn</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/jquery/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Roxn</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Roxn</div>
+        <div class="logo-desc">
+            
+            任何值的拥有的都是值得等待的
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+
+    </ul>
+</div>
+
+
+        </div>
+
+    </nav>
+
+</header>
+
+    
+<script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">安全和加密</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">系统</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/linux/" class="post-category">
+                                linux
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-30
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-08-10
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.9k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <!-- 文章头部设置 -->
+<h1 id="安全和加密"><a href="#安全和加密" class="headerlink" title="安全和加密"></a>安全和加密</h1><p>OpenSSL由三部分组成：<br>&emsp;&emsp;libencrypto库：加密解密库<br>&emsp;&emsp;libssl库：实现ssl安全通信机制的库<br>&emsp;&emsp;openssl：多用途命令行工具  </p>
+<p>TCP、UDP 传输层协议<br>&emsp;&emsp;TCP协议：应用层,数据、传输层,（封装TCP首部）段、网络层（封装IP首部）叫报文、数据链路层（封装MAC首部）、发送<br>&emsp;&emsp;SSL安全套接字层，就是IP+端口，可以确认主机上的应用程序，不同的应用程序就是IP+不同的端口号？？？？？  </p>
+<p>SSL是应用层和传输层之间的一个模块<br>&emsp;&emsp;http+调用ssl库—&gt;https<br>&emsp;&emsp;https调用了SSL协议，httpd调用了ssl库就使用加密传输，反之不加密传输<br><strong>http协议的实现，是由httpd程序完成的</strong>  </p>
+<p>通信安全的目标（及受攻击类型）：<br>&emsp;&emsp;保密性（窃听、通信量分析）<br>&emsp;&emsp;完整性（更改、伪装、重放、否认）<br>&emsp;&emsp;可用性（拒绝服务DoS）  </p>
+<p>加密完全体：<br>原始数据，获取校验码，用发件人的私钥加密校验码、对称加密，加密校验码和原始数据，用收件人公钥加密对称加密密码、发送  </p>
+<p>校验码：md5、sha1、sha224等<br>（对称加密：对较大文件加密时，比非对称加密耗费的时间少）  </p>
+<p>CA认证：（CA有很多，各种CA之间互信）<br>&emsp;&emsp;将公钥送到CA进行认证，获得“CA证书”  </p>
+<p>证书信息：版本号、签名、证书发行者、有效期、主体公钥、等等<br>CA：公钥转发信任机构，客户把自己的公钥送往CA认证，CA会对公钥的特征码用CA的私钥加密（签名），互换公钥的两个客户端，把公钥送到CA认证，认证完成后用对方的公钥加密证书特征码（使用对方公钥加密是为了保证证书完整性）后互换证书，如果可以用CA的公钥解开（验证签名）双方公钥的加密特征码，证明证书是CA颁布的、可信任的  </p>
+<hr>
+<p>加密算法和协议：<br>对称加密：加密和解密使用同一个密钥<br>算法：3DES、AES（支持128 bits 、192bits 、256bits 、384bits）<br>特性：加密解密使用同一个密钥、将原始数据分割成固定大小的块，逐个进行加密<br>缺陷：密钥过多，分发困难  </p>
+<p>公钥加密：密钥分为公钥和与之配对的私钥<br>&emsp;&emsp;公钥：从私钥中提取产生，可以公开给所有人<br>&emsp;&emsp;私钥：通过算法创建，使用者自己保留，以保证其私密性<br>&emsp;&emsp;特点：使用公钥加密的数据，只能使用对应的私钥解开<br>&emsp;&emsp;用途：数字签名，主要用于让接收方确认发送方的身份<br>&emsp;&emsp;密钥交换：发送方用对方的公钥加密一个对称密钥，并发送给对方<br>&emsp;&emsp;算法：RSA（只能签名，不能加解密），DSA（签名和加解密），ELGamal（商业的）  </p>
+<p>单向加密：即提取数据特征码<br>&emsp;&emsp;特性：定长输出、雪崩效应<br>&emsp;&emsp;功能：校验数据的完整性<br>&emsp;&emsp;算法：md5 、sha1 、sha224 、sha256等  </p>
+<p>密钥交换：IKE<br>&emsp;&emsp;公钥加密DH<br>&emsp;&emsp;ECDH（椭圆曲线DH），ECDHE（临时椭圆曲线DH）<br>&emsp;&emsp;DH算法的实现<br>&emsp;&emsp;&emsp;&emsp;A：p,g<br>&emsp;&emsp;&emsp;&emsp;B：p,g<br>&emsp;&emsp;&emsp;&emsp;A：x&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;生成密钥x<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;—&gt;p^y%g==&gt;B  将与x计算出的结果发送给B<br>&emsp;&emsp;&emsp;&emsp;   A：(p^y%g)^x=p^yx%g  计算得到密钥<br>&emsp;&emsp;&emsp;&emsp;B：y&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;B生成密钥y<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;—&gt;p^y%g==&gt;A  将与y计算结果发送给A<br>&emsp;&emsp;&emsp;&emsp;   B：(p^x%g)^y=p^xy%g  计算得到密钥  </p>
+<p>PKI：（公钥基础设施）<br>&emsp;&emsp;签证机构：CA<br>&emsp;&emsp;注册机构：RA<br>&emsp;&emsp;证书吊销列表：CRL<br>&emsp;&emsp;证书存取库：CB  </p>
+<p>X.509v3：定义了证书的结构以及认证协议标准<br>&emsp;&emsp;版本号<br>&emsp;&emsp;签名算法ID<br>&emsp;&emsp;发行者名称<br>&emsp;&emsp;有效期、等等  </p>
+<p>SSL：安全套接字层<br>&emsp;&emsp;由网景公司于1994年开发<br>&emsp;&emsp;版本：V1.0，V2.0，V3.0  </p>
+<p>TLS：传输层安全，二者基本上兼容<br>&emsp;&emsp;IETF组织1999年发行<br>&emsp;&emsp;版本：V1.0，V1.1，V1.2，V1.3<br>&emsp;&emsp;目前建议使用的是V1.2版<br>&emsp;&emsp;TLS本身也采用了分层设计：<br>&emsp;&emsp;&emsp;&emsp;1、最底层：基础算法原语的实现，aes，rsa，md5<br>&emsp;&emsp;&emsp;&emsp;2、向上一层：各种算法的实现<br>&emsp;&emsp;&emsp;&emsp;3、再向上一层：组合算法实现的半成品<br>&emsp;&emsp;&emsp;&emsp;4、最上层：用各种组件拼装而成的各种成品密码学协议软件  </p>
+<p>此两种协议的开源实现方式：OpenSSL<br>&emsp;&emsp;OpenSSL分为三种<br>&emsp;&emsp;&emsp;&emsp;libencrypto库：加密解密库<br>&emsp;&emsp;&emsp;&emsp;libssl库：实现ssl安全通信机制的库<br>&emsp;&emsp;&emsp;&emsp;openssl：多用途命令行工具  </p>
+<p>SSL会话主要有三步：<br>&emsp;&emsp;一、客户端向服务端索要并验证证书<br>&emsp;&emsp;二、双方协商生成“会话密钥”<br>&emsp;&emsp;三、双方采用“会话密钥”进行加密通信  </p>
+<p>SSL握手<br>&emsp;&emsp;第一阶段：客户端请求<br>&emsp;&emsp;&emsp;&emsp;支持的协议版本，如tls1.2<br>&emsp;&emsp;&emsp;&emsp;客户端生成一个随机数，稍后用于生成“会话密钥”<br>&emsp;&emsp;&emsp;&emsp;支持的加密算法，如AES、3DES、RSA<br>&emsp;&emsp;&emsp;&emsp;支持的压缩算法<br>&emsp;&emsp;第二阶段：服务端回应<br>&emsp;&emsp;&emsp;&emsp;确认使用的加密通信协议版本，如tls1.2<br>&emsp;&emsp;&emsp;&emsp;服务器端生成一个随机数，稍后用于生成“会话密钥”<br>&emsp;&emsp;&emsp;&emsp;确认使用的加密方法<br>&emsp;&emsp;&emsp;&emsp;服务器证书<br>&emsp;&emsp;第三阶段：<br>&emsp;&emsp;&emsp;&emsp;验证服务器证书，在确认无误后取出其公钥（发证机构、证书的完整性、证书持有者、有效期、吊销列表）<br>&emsp;&emsp;&emsp;&emsp;验证后发送一下信息给服务端一个随机数（目的是为了安全）<br>&emsp;&emsp;&emsp;&emsp;编码变更通知，表示随后的信息都将使用双方商定的加密方法和密钥发送<br>&emsp;&emsp;&emsp;&emsp;客户端握手结束通知&emsp;&emsp;<br>&emsp;&emsp;第四阶段：<br>&emsp;&emsp;&emsp;&emsp;收到客户端发来的第三个随机数后，计算生成本次会话所用到的“会话密钥”<br>&emsp;&emsp;&emsp;&emsp;向客户端发送如下信息：<br>&emsp;&emsp;&emsp;&emsp;编码变更通知，表示随后的信息都将使用双方商定的加密方法和密钥发送服务端握手结束通知  </p>
+<p>对称加密：<br>&emsp;&emsp;加密：<code>openssl enc [-e] -des3 [-a -salt] -in file -out file.m</code><br><img src="/medias/drawing-bed/openssl/0.png"><br>&emsp;&emsp;解密：<code>openssl enc -d -des3 [-a -salt] -in file.m -out file1</code><br><img src="/medias/drawing-bed/openssl/1.png"><br>选项：<br>&emsp;&emsp;<code>-e</code>：加密使用<br>&emsp;&emsp;<code>-d</code>：解密使用<br>&emsp;&emsp;<code>-des3</code>：加密算法<br>&emsp;&emsp;<code>-a</code>：文本编码格式<br>&emsp;&emsp;<code>-salt</code>：加盐  </p>
+<p>单向加密：<br>&emsp;&emsp;<code>openssl dgst -md5 file</code>（获取文件的md5特征码）<br><img src="/medias/drawing-bed/openssl/2.png"><br>&emsp;&emsp;<code>md5sum file</code>（释义同上）<br><img src="/medias/drawing-bed/openssl/3.png"><br>&emsp;&emsp;算法md5、sha1、sha224等<br><img src="/medias/drawing-bed/openssl/4.png"></p>
+<p>生成用户密码：<br>&emsp;&emsp;<code>openssl passwd -1 [-salt az]</code>（-1指定md5，-salt加盐，即随机数）<br><img src="/medias/drawing-bed/openssl/5.png"><br><img src="/medias/drawing-bed/openssl/6.png"><br>（不加盐，输入同样的密码，打印出的结果不同）  </p>
+<p>生成随机数：<br>&emsp;&emsp;<code>openssl rand -hex #</code>（生成16进制随机数，打印字节数是给定的数字的2倍）<br><img src="/medias/drawing-bed/openssl/7.png"><br>（给同样的数，每次打印出的结果不同）<br>&emsp;&emsp;<code>openssl rand -base64 #</code>（使用base64编码）<br><img src="/medias/drawing-bed/openssl/8.png"><br>（打印结果为4N，不足4N用 = 号补位，命令行每按顺序+3次，打印结果循环一次，即打印4(N+1）位，释义：命令行给3N+1，打印两个 = ；命令行给3N+2，打印一个 = ；命令行给3N+3，打印零个  = ）<br>生成私钥：<br>&emsp;&emsp;<code>(umask 077;openssl genrsa -out file.s)</code>或<code>(umask 077;openssl genrsa -out file.s -des 1024)</code>加密的私钥（括号是为了和外边的shell环境隔离,使给定的umask值有效）<br><img src="/medias/drawing-bed/openssl/9.png"><br><img src="/medias/drawing-bed/openssl/10.png"><br>提取公钥：<br>&emsp;&emsp;<code>openssl rsa -in file.s -pubout -out file.g</code><br>选项：<br>&emsp;&emsp;<code>-pubout</code>：指明提取公钥<br><img src="/medias/drawing-bed/openssl/11.png"></p>
+<p>公钥加密：<br>&emsp;&emsp;<code>openssl rsautl -encrypt -in testfile -inkey file.g -pubin -out tsetfile.m</code><br>私钥解密：<br>&emsp;&emsp;<code>openssl rsautl -decrypt -in testfile.m -inkey file.s -out file2</code><br>选项：<br>&emsp;&emsp;<code>rsautl</code>：算法<br>&emsp;&emsp;<code>-encrypt</code>：加密使用<br>&emsp;&emsp;<code>-decrypt</code>：解密使用<br>&emsp;&emsp;<code>-inkey</code>：指定密钥<br>&emsp;&emsp;<code>-pubin</code>：表明是纯公钥加密<br><img src="/medias/drawing-bed/openssl/12.png"></p>
+<p>CA：<br>&emsp;&emsp;公共信任的CA，私有CA<br>&emsp;&emsp;建立私有CA，openssl命令：<br>&emsp;&emsp;配置文件：<code>/etc/pki/tls/openssl.cnf</code><br>在确定配置为CA的服务器上生成一个自签证书，并为CA提供所需要的目录及文件即可<br>实现步骤：<br>&emsp;&emsp;1.生成私钥：<br>&emsp;&emsp;<code>(umask 077;openssl genrsa -out /etc/pki/CA/private/cakey.pem 4096)</code><br><img src="/medias/drawing-bed/openssl/13.png"><br>&emsp;&emsp;2.生成自签证书：<br>&emsp;&emsp;<code>openssl req -new -x509 -key /etc/pki/CA/private/cakey.pem -out /etc/pki/CA/cacert.pem -days 365</code><br><img src="/medias/drawing-bed/openssl/14.png"><br>&emsp;&emsp;选项：<br>&emsp;&emsp;&emsp;&emsp;<code>req</code>：证书请求即证书生成工具<br>&emsp;&emsp;&emsp;&emsp;<code>-new</code>：生成新证书签署请求<br>&emsp;&emsp;&emsp;&emsp;<code>-x509</code>：生成自签格式的证书，专用于创建私有CA时<br>&emsp;&emsp;&emsp;&emsp;<code>-key</code>：生成请求时用到的私有文件路径<br>&emsp;&emsp;&emsp;&emsp;<code>-out</code>：生成的请求文件路径；如果自签操作将直接生成签署过的证书<br>&emsp;&emsp;&emsp;&emsp;<code>-days</code>：证书的有效时长，单位为天<br>&emsp;&emsp;3.为CA提供所需的目录及文件<br>&emsp;&emsp;&emsp;&emsp;<code>mkdir -pv /etc/pki/CA/&#123;certs,crl,newcerts&#125;</code><br>&emsp;&emsp;&emsp;&emsp;<code>touch /etc/pki/CA/&#123;serial,index.txt&#125;</code><br>&emsp;&emsp;&emsp;&emsp;<code>echo 01 &gt; /etc/pki/CA/serial</code><br><img src="/medias/drawing-bed/openssl/15.png"></p>
+<p>要用到证书进行安全通信的服务器，需要向CA请求签署证书<br>&emsp;&emsp;步骤：（以httpd为例）<br>&emsp;&emsp;4.用到证书的主机生成私钥（要认证机构）<br>&emsp;&emsp;<code>mkdir /etc/httpd/ssl;cd /etc/httpd/ssl</code><br>&emsp;&emsp;<code>(umask 077;openssl genrsa -out /etc/httpd/ssl/httpd.key 2048)</code><br><img src="/medias/drawing-bed/openssl/16.png"><br>&emsp;&emsp;5.生成证书签署请求（要认证机构）<br>&emsp;&emsp;<code>openssl req -new -key /etc/httpd/ssl/httpd.key -out /etc/httpd/ssl/httpd.csr -days 365</code><br><img src="/medias/drawing-bed/openssl/17.png"><br>&emsp;&emsp;6.将请求通过可靠的方式发送给CA主机（要认证机构）<br>&emsp;&emsp;<code>scp /etc/httpd/ssl/httpd.csr root@ip:/tmp/</code><br><img src="/medias/drawing-bed/openssl/18.png"><br>&emsp;&emsp;7.在CA主机上签署证书<br>&emsp;&emsp;<code>openssl ca -in /tmp/httpd.csr -out /etc/pki/CA/certs/httpd.crt -days 365</code><br><img src="/medias/drawing-bed/openssl/19.png"><br><img src="/medias/drawing-bed/openssl/20.png"></p>
+<p>查看证书中的信息：<br>&emsp;&emsp;<code>openssl x509 -in /etc/pki/CA/certs/httpd.crt/ -noout -subject</code><br><img src="/medias/drawing-bed/openssl/21.png"></p>
+<p>吊销证书：<br>&emsp;&emsp;步骤：<br>&emsp;&emsp;1.客户端获取要吊销的证书的seral（在使用证书的主机上执行）<br>&emsp;&emsp;<code>openssl x509 -in /etc/pki/CA/certs/httpd.crt -noout -serial -subject</code>（可省略）<br>&emsp;&emsp;2.CA主机吊销证书：<br>&emsp;&emsp;&emsp;&emsp;先根据客户提交的serial和subject信息，对比其与本机数据库index.txt中存储的是否一致<br>&emsp;&emsp;吊销：<br>&emsp;&emsp;&emsp;&emsp;<code>openssl ca -revoke /etc/pki/CA/newcerts/证书序列号.pem</code><br><img src="/medias/drawing-bed/openssl/22.png"><br>&emsp;&emsp;3.生成吊销证书的吊销编号（只在第一次吊销证书时执行）<br>&emsp;&emsp;&emsp;&emsp;<code>echo 01 &gt; /etc/pki/CA/crlnumber</code><br><img src="/medias/drawing-bed/openssl/23.png"><br>&emsp;&emsp;4.更新证书吊销列表<br>&emsp;&emsp;&emsp;&emsp;<code>openssl ca -gencrl -out thisca.crl</code><br><img src="/medias/drawing-bed/openssl/24.png"><br>&emsp;&emsp;&emsp;&emsp;查看crl文件：<br>&emsp;&emsp;&emsp;&emsp;<code>openssl crl -in thisca.crl -noout -text</code><br><img src="/medias/drawing-bed/openssl/25.png"><br><code>$( )</code> 和 <code>``</code> 可以读取里面的命令结果  </p>
+<p>如果您有 补充 &amp; 更正 的意见和建议请留言评论，谢谢~  </p>
+
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Poyais</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://roxn.cn/posts/1faa.html">https://roxn.cn/posts/1faa.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Poyais</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">系统</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/5d5.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/drawing-bed/featureimages/8.jpg" class="responsive-img" alt="ssh">
+                        
+                        <span class="card-title">ssh</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            ssh服务
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/linux/" class="post-category">
+                                    linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">系统</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/c137.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/drawing-bed/featureimages/13.jpg" class="responsive-img" alt="awk">
+                        
+                        <span class="card-title">awk</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            就是awk
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/linux/" class="post-category">
+                                    linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">系统</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Roxn<br />'
+            + '文章作者: Poyais<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+    <footer class="page-footer bg-color">
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2021</span>
+            
+
+            
+                <span id="icp"><img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="https://beian.miit.gov.cn" target="_blank">京ICP备20015925号</a>
+            </span>
+            
+            <br>
+
+<!--             <span id="year">2020</span>
+            <a href="/about" target="_blank">Poyais</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br> -->
+
+
+            <!-- 运行天数提醒. -->
+            <span <i class="fas fa-desktop"></i> </span>
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    function siteTime() {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2020";
+                        var startMonth = "8";
+                        var startDate = "1";
+                        var startHour = "8";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+                        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+                        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '小破站已勉强苟活 ' + diffDays + ' 天 ' + diffHours + ' 小时 ' + diffMinutes + ' 分钟 ' + diffSeconds + ' 秒🎊';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '小破站已勉强苟活 ' + diffYears + ' 年 ' + diffDays + ' 天 ' + diffHours + ' 小时 ' + diffMinutes + ' 分钟 ' + diffSeconds + ' 秒🎊';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    setInterval(siteTime, 1000);
+                </script>
+            <br>
+            
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点字数:&nbsp;<span
+                        class="white-color">153.9k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">🎉
+                <i class="far fa-eye"></i>&nbsp;访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">🎉
+                <i class="fas fa-users"></i>&nbsp;访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>🎉
+            </span>
+            
+
+
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的Git仓库" data-position="top" data-delay="50">
+        <i class="fab fa-git"></i>
+    </a>
+
+
+
+    <a href="mailto:158970251@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=158970251" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 158970251" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

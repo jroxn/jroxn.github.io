@@ -250,6 +250,87 @@
                 </a>
                 
                 
+                <a href="/categories/error/" title="error: 13">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F5EEF8;">error
+                        <span class="tag-length">13</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/hadoop/" title="hadoop: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D5F5E3;">hadoop
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/kubernetes/" title="kubernetes: 3">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #E8F8F5;">kubernetes
+                        <span class="tag-length">3</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/linux/" title="linux: 24">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FEF9E7;">linux
+                        <span class="tag-length">24</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/notes/" title="notes: 8">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">notes
+                        <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/others/" title="others: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #82E0AA;">others
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/python/" title="python: 16">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D7BDE2;">python
+                        <span class="tag-length">16</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/system/" title="system: 5">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #A3E4D7;">system
+                        <span class="tag-length">5</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/wujiops/" title="wujiops: 8">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #85C1E9;">wujiops
+                        <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
             </div>
         </div>
     </div>
@@ -317,7 +398,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,2,0],
+                data: [3,3,2,0,0,1,0,1,0,0,0,2,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -353,7 +434,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["Markdown","Hexo","测试页"]
+                data: ["linux","学习笔记","系统","python","docker","nginx","mysql","报错","gitlab","Markdown"]
             }
         ],
         yAxis: [
@@ -366,7 +447,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [2,1,1],
+                data: [49,42,29,17,7,5,4,3,3,2],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -404,7 +485,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"Markdown","max":4}],
+            indicator: [{"name":"Markdown","max":26},{"name":"error","max":26},{"name":"hadoop","max":26},{"name":"kubernetes","max":26},{"name":"linux","max":26},{"name":"notes","max":26},{"name":"others","max":26},{"name":"python","max":26},{"name":"system","max":26},{"name":"wujiops","max":26}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -415,7 +496,7 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [2],
+                    value : [2,13,4,3,24,8,5,16,5,8],
                     name : '文章分类数量'
                 }
             ]
@@ -519,7 +600,7 @@
             
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点字数:&nbsp;<span
-                        class="white-color">1.6k</span>
+                        class="white-color">153.9k</span>
             
             
             

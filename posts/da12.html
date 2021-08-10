@@ -1,0 +1,1223 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="磁盘管理, Linux Python Shell Devops Kubernetes Hadoop">
+    <meta name="description" content="任何值的拥有的都是值得等待的">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>磁盘管理 | Roxn</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/jquery/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Roxn</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Roxn</div>
+        <div class="logo-desc">
+            
+            任何值的拥有的都是值得等待的
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+
+    </ul>
+</div>
+
+
+        </div>
+
+    </nav>
+
+</header>
+
+    
+<script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">磁盘管理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">系统</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/linux/" class="post-category">
+                                linux
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-29
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-08-10
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.4k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <!-- 文章头部设置 -->
+<h1 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h1><p>I/O设备地址    </p>
+<h2 id="设备类型："><a href="#设备类型：" class="headerlink" title="设备类型："></a>设备类型：</h2><p>块设备：block，存取单位”块”，磁盘<br>字符设备：char，存取单位”字符”，键盘<br>设备文件：关联至一个设备驱动程序，进而能够跟与之对应硬件设备进行通信  </p>
+<h2 id="设备号码："><a href="#设备号码：" class="headerlink" title="设备号码："></a>设备号码：</h2><p>主设备号：标识设备类型<br>次设备号：标识同一类型下的不同设备  </p>
+<h2 id="硬盘接口类型："><a href="#硬盘接口类型：" class="headerlink" title="硬盘接口类型："></a>硬盘接口类型：</h2><p>并行：串口：<br>设备文件：磁盘设备命名：<code>/dev/sd[a-z]</code><br>不同设备：<code>a-z</code><br>同一设备不同分区<code>/dev/sda[1-4]</code>（主分区最多4个，扩展分区只1个，多个无意义即3主分区+1扩展分区）  </p>
+<h2 id="磁盘结构："><a href="#磁盘结构：" class="headerlink" title="磁盘结构："></a>磁盘结构：</h2><p>磁臂、磁头head、主轴、电机、磁道track、扇区secotr（大小512bytes）、簇（同一磁道的连续多个扇区）、盘面、盘片、柱面cylinder  </p>
+<h3 id="磁盘分区：为什么分区？"><a href="#磁盘分区：为什么分区？" class="headerlink" title="磁盘分区：为什么分区？"></a>磁盘分区：为什么分区？</h3><ol>
+<li>优化I/O性能  </li>
+<li>实现磁盘空间配额限制  </li>
+<li>提高修复速度  </li>
+<li>隔离系统和程序  </li>
+<li>安装多个OS  </li>
+<li>采用不同文件系统<br>分区：两种分区方式：<code>MBR</code>，<code>GPT</code><br>MBR：1982年，使用32位表示扇区数，分区不超过2T  </li>
+</ol>
+<h3 id="如何分区：按柱面分区"><a href="#如何分区：按柱面分区" class="headerlink" title="如何分区：按柱面分区"></a>如何分区：按柱面分区</h3><p>0磁道0扇区：512bytes（其中446字节为引导程序boot loader，64字节是分区表，其中16字节标识一个分区，2字节：55AA分区标志）<br>最多拥有64÷16=4个主分区（也可以&lt;4个主分区+1个扩展分区，在扩展分区上可划分多个逻辑分区）  </p>
+<h4 id="管理分区："><a href="#管理分区：" class="headerlink" title="管理分区："></a>管理分区：</h4><p><code>lsblk</code>：列出块设备<br><code>partx -a /dev/sd*</code>：重新设置内存中的内核分区表版本（使硬盘分区表生效    centos5,7使用partprobe）（多执行几次，不行就reboot）<br><code>blkid /dev/sda#</code>：查看分区设备的UUID  </p>
+<h4 id="fdisk-分区工具"><a href="#fdisk-分区工具" class="headerlink" title="fdisk 分区工具"></a>fdisk 分区工具</h4><p><code>fdisk /dev/sdb</code>：对sdb进行分区<br>子命令：<br><code>m</code>：帮助<br><code>p</code>：列表分区情况<br><code>t</code>：更改分区系统类型对应编号<br><code>l</code>：查看分区系统类型对应编号<br><code>d</code>：删除分区<br><code>w</code>：保存退出<br><code>q</code>：不保存退出<br><code>n</code>：创建分区<br>​      <code>e</code>：指定创建扩展分区<br>​      <code>p</code>：指定创建主分区<br>​      <code>l</code>：指定创建逻辑分区<br><code>fdisk -l</code>：显示硬盘使用情况（按柱面、磁道显示）<br><code>fdisk -lu</code>：按扇区显示信息<br><code>cat /proc/partitions</code>：查看内核是否已经识别新的分区<br><code>partx -a /dev/sd*</code>：通知内核重新读取硬盘分区表<br><code>partx -d --nr 5-6 /dev/sd*</code>：fdisk删除分区，内存未识别情况下，使用partx -d使其识别（范围删除5-6）<br><code>lsmod</code> 查看系统中启用的模块  </p>
+<h1 id="文件系统："><a href="#文件系统：" class="headerlink" title="文件系统："></a>文件系统：</h1><p>文件系统是操作系统用于明确存储设备或分区上的文件的方法和数据结构；即在存储设备上组织文件的方法。操作系统中负责管理和存储文件信息的软件结构称为文件管理系统，简称文件系统。从系统角度来看，文件系统是对文件存储设备的空间进行组织和分配，负责文件存储并对存入的文件进行保护和检索的系统。具体地说，它负责为用户建立文件，存入、读出、修改、转储文件，控制文件的存取，安全控制，日志，压缩，加密等。  </p>
+<h2 id="文件系统分类："><a href="#文件系统分类：" class="headerlink" title="文件系统分类："></a>文件系统分类：</h2><ol>
+<li>根据其是否支持”日志”功能  </li>
+<li>日志型文件系统：ext3，ext4，xfs  </li>
+<li>非日志型文件系统：ext2，vfat<br><code>cat /proc/filesystems</code>：查看支持的文件系统<br><code>mkfs.ext4 /dev/sd*#</code>：（.xfs .btrfs .vfat）<br><code>mkfs -t 文件系统类型 /dev/sd*#</code><br>扩展分区不可以格式化使用，因为扩展分区是个逻辑性的硬盘，只有分区后，对逻辑分区格式化后才能使用  </li>
+</ol>
+<h2 id="文件系统检测和修复"><a href="#文件系统检测和修复" class="headerlink" title="文件系统检测和修复"></a>文件系统检测和修复</h2><p>非常发生于死机或者非正常关机之后<br>挂载为文件系统标记为”no clean”<br>注意：一定不要在挂载状态下修复<br><code>fsck.ext4 /dev/sd*#</code>：对分区检测和修复（.ext4 .xfs等要与分区已存在的文件类型相同）（等同于fsck -t ext4 -ar /dev/sd*#）<br><code>e2fsck -y -f /dev/sd*#</code> （专用于ext系列文件的检测修复工具）<br><code>-y</code>：自动回答为yes<br><code>-f</code>：强制修复  </p>
+<h2 id="挂载mount"><a href="#挂载mount" class="headerlink" title="挂载mount"></a>挂载mount</h2><p>挂载<code>mount</code>：将额外的文件系统与文件系统某现存的目录建立起关联关系，进而使得此目录做为其它文件访问入口的行为<br>卸载：为解除此关联关系的过程<br><code>mount [选项] 设备分区名 挂载目录</code>：把设备关联到挂载点  </p>
+<p>选项：<br><code>-t ext4</code> 指明文件类型是ext4<br><code>-r</code> 只读挂载<br><code>-a</code> 自动挂载（定义在/etc/fstab文件中）<br>（umount -a 报错是/dev/sdb1挂载到/testdir目录时，/dev/sdb1分区被做成了RAID）<br><code>-o [选项]</code>（remount，usrquota，grpquota即：重新挂载，对用户的配额文件，对组的配额文件）<br>如果挂载目录下有文件，那么挂载后原有文件会被临时隐藏，解除挂载关系后原有文件还原。（挂载点目录一般为空）<br><code>cat /etc/mtab</code>：显示当前已挂载的所有设备<br><code>findmnt 挂载点</code>：查看挂载点的挂载情况<br><code>umount 设备分区名（或者挂载目录）</code>：卸载，即解除关联关系  </p>
+<p>挂载点和<code>/etc/fstab</code>：  </p>
+<ol>
+<li>文件系统体系  </li>
+<li>被mount、fsck和其它程序使用  </li>
+<li>系统重启时保留文件系统体系  </li>
+<li>使用<code>mount -a</code>命令 挂载/etc/fstab文件里的配置信息  </li>
+</ol>
+<p>/etc/fstab每行的定义：  </p>
+<ol>
+<li>要挂载的设备 挂载点 文件系统类型 挂载选项 转储频率 自检次序  </li>
+<li>要挂载的设备：（设备文件、UUID、伪文件系统名称）  </li>
+<li>挂载选项：defaults（usrquota，grpquota）  </li>
+<li>转储频率：  <blockquote>
+<p>0：不做备份<br>1：每天转储<br>2：每隔一天转储  </p>
+</blockquote>
+</li>
+<li>自检次序：  <blockquote>
+<p>0：不自检<br>1：首先自检；一般只有rootfs才用1  </p>
+</blockquote>
+</li>
+</ol>
+<h2 id="处理交换文件和分区"><a href="#处理交换文件和分区" class="headerlink" title="处理交换文件和分区"></a>处理交换文件和分区</h2><p>交换分区是系统RAM（内存）的补充<br>基本设置包括：  </p>
+<ol>
+<li>创建交换分区或者文件  </li>
+<li>使用mkswap创建交换文件系统  </li>
+<li>在/etc/fstab文件中添加适当的条目<br>挂载交换分区：  </li>
+<li><code>mkswap /dev/sdb1</code>创建交换文件系统  </li>
+<li><code>swapon /dev/sdb1</code>激活新增的交换分区  </li>
+<li><code>swapon -a</code> 激活所有的交换分区  </li>
+<li><code>swapon -s</code>查看交换分区情况、数量  </li>
+<li><code>swapoff /dev/sdb1</code>禁用交换分区<br><code>cat /proc/meminfo|grep &quot;SwapTotal&quot;</code> 查看交换分区大小（grep -i 不区分大小写）  </li>
+</ol>
+<h1 id="移动介质："><a href="#移动介质：" class="headerlink" title="移动介质："></a>移动介质：</h1><p>挂载意味着使用外来的文件系统看起来如同是主目录树的一部分<br>访问前、介质必须被挂载<br>摘除时、介质必须被卸载<br>按照默认位置，非根用户只能挂载某些设备（光盘、USB等等）<br>挂载点通常在/media或/mnt下<br>在图形环境下自动启动挂载/media/CentOS_6.9_Final/Packages<br>否则就必须被手工挂载<br><code>mount /dev/sr0 /media/</code>  </p>
+<h1 id="常见工具"><a href="#常见工具" class="headerlink" title="常见工具"></a>常见工具</h1><p><code>free -m</code>：以MB为单位<br><code>free -g</code>：以GB为单位<br><code>df -H 设备分区</code>：以1000为单位<br><code>df -h 设备分区</code>：易读格式显示（以1024为单位）<br><code>df -T 设备分区</code>：文件系统类型<br><code>df -i 设备分区</code>：显示索引节点<br><code>du -h 目录</code>：易读格式显示<br><code>du -s 目录</code>：总的<br>dd命令：转换和复制文件  </p>
+<h2 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h2><p><code>dd if=/文件 of=/文件 bs= count=…</code><br><code>bs</code>：复制单元大小，默认单位是字节（例如：bs=6K）<br><code>count</code>：复制多少个单元（例如：count=2）<br><code>if=file</code>：从文件中读取内容<br><code>of=file</code>：写入到目标文件中<br><code>skip</code>：从开头忽略n个ibs大小的块（例如：skip=6 bs=3K 从开头忽略18k的数据开始复制）<br><code>seek</code>：从开头忽略n个obs大小的块（例如：seek=2 bs=2k 从开头忽略4K的数据开始写入）<br>备份MBR：<code>dd if=/dev/sda of=/tmp/mbr.bak bs=512 count=1</code>  </p>
+<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><p><code>dd if=/dev/sdb of=/dev/sdc</code>：将/dev/sdb整盘备份到/dev/sdc<br><code>dd if=/dev/sdb | gzip &gt; /path/sdb.gz</code>：读sdb全盘数据压缩到指定路径下的sdb.gz<br><code>dd if=/dev/mem of=/root/mem.bin bs=1024</code>：将内存里的数据拷贝到root目录下的mem.bin文件<br><code>dd if=/dev/sr0 of=/root/cd.iso</code>：拷贝到光盘数据到root文件夹下，并保存为cd.iso文件  </p>
+<h1 id="大于2T的磁盘分区"><a href="#大于2T的磁盘分区" class="headerlink" title="大于2T的磁盘分区"></a>大于2T的磁盘分区</h1><p>以在<code>CentOS 7.5</code>操作系统中使用<code>parted</code>分区工具将数据盘<code>/dev/vdc</code>设置为主分区（<code>yum install parted</code>），分区形式默认设置为<code>GPT</code>，文件系统设置为<code>EXT4</code>格式，挂载在<code>/data/newpart2</code>下，并设置<code>开机启动自动挂载</code>为例，不同操作系统的格式化操作可能不同，仅供参考。</p>
+<ol>
+<li><p>以<code>root</code>用户执行以下命令，查看磁盘名称。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lsblk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>回显信息类似如下图，表示当前的云服务器有两块磁盘，<code>/dev/vda</code>是系统盘，<code>/dev/vdc</code>是新增数据盘。<br><img src="/medias/drawing-bed/linux/0.png"></p>
+</li>
+<li><p>执行以下命令，进入<code>parted</code>分区工具，开始对新增数据盘执行分区操作。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">parted</span> <span class="token operator">&lt;</span>新增数据盘<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>以新挂载的数据盘<code>/dev/vdc</code>为例：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">parted</span> /dev/vdc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>回显信息类似如下图：<br><img src="/medias/drawing-bed/linux/1.png"></p>
+</li>
+<li><p>输入<code>p</code>，按<code>Enter</code>，查看当前磁盘分区形式。<br>回显信息类似如下图：<br><img src="/medias/drawing-bed/linux/2.png"><br>【Partition Table: unknown】表示磁盘分区形式未知。</p>
+</li>
+<li><p>执行以下命令，设置磁盘分区形式。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mklabel <span class="token operator">&lt;</span>磁盘分区方式<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>磁盘容量大于等于<code>2TB</code>时，只能使用<code>GPT</code>分区方式：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mklabel gpt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>输入<code>p</code>，按<code>Enter</code>，查看磁盘分区形式是否设置成功。<br>回显信息类似如下图：<br><img src="/medias/drawing-bed/linux/3.png"><br>【Partition Table: gpt】表示磁盘分区形式为 GPT。</p>
+</li>
+<li><p>输入<code>unit s</code>，按<code>Enter</code>，设置磁盘的计量单位为磁柱。  </p>
+</li>
+<li><p>以为整个磁盘创建一个分区为例，输入<code>mkpart opt 2048s 100%</code>，按<code>Enter</code>。<br><code>2048s</code>表示磁盘起始容量，<code>100%</code>表示磁盘截止容量，此处仅供参考，您可以根据业务需要自行规划磁盘分区数量及容量。</p>
+</li>
+<li><p>输入p，按 Enter，查看新建分区的详细信息。<br>回显信息类似如下图：<br><img src="/medias/drawing-bed/linux/4.png"><br>表示新建分区/dev/vdc1的详细信息。</p>
+</li>
+<li><p>输入<code>q</code>，按<code>Enter</code>，退出<code>parted</code>分区工具  </p>
+</li>
+<li><p>执行以下命令，查看磁盘名称。  </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lsblk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>回显信息类似如下图，此时可看到新分区<code>/dev/vdc1</code>。<br><img src="/medias/drawing-bed/linux/5.png"></p>
+</li>
+<li><p>执行以下命令，将新建分区文件系统设置为系统所需格式。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkfs</span> -t <span class="token operator">&lt;</span>文件系统格式<span class="token operator">></span> /dev/vdc1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>不同文件系统支持的分区大小不同，请根据实际需求合理选择文件系统。以设置文件系统为 EXT4 为例：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkfs</span> -t ext4 /dev/vdc1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>回显信息类似如下图：<br><img src="/medias/drawing-bed/linux/6.png"><br>格式化需要等待一段时间，请观察系统运行状态，不要退出。</p>
+</li>
+<li><p>执行以下命令，新建挂载点。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> <span class="token operator">&lt;</span>挂载点<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>以新建挂载点/data/newpart2为例：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> /data/newpart2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>执行以下命令，将新建分区挂载至新建的挂载点。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mount</span> /dev/vdc1 <span class="token operator">&lt;</span>挂载点<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>以新建挂载点/data/newpart2为例：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mount</span> /dev/vdc1 /data/newpart2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>执行以下命令，查看挂载结果。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">df</span> -TH<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>回显信息类似如下图：<br><img src="/medias/drawing-bed/linux/7.png"><br>表示新建分区/dev/vdc1已挂载至/data/newpart2。</p>
+</li>
+<li><p>确认挂载方式并获取对应信息。<br>您可以根据业务需求选择使用弹性云硬盘的软链接、文件系统的<code>UUID</code>（universally unique identifier）或设备名称自动挂载磁盘，相关说明和信息获取方式如下：</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">挂载方式</th>
+<th align="left">优缺点</th>
+<th align="left">信息获取方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">使用弹性云硬盘的软链接（推荐）</td>
+<td align="left">优点：每个弹性云硬盘的软链接固定且唯一，不会随卸载挂载、格式化分区等操作而改变。缺点：只有弹性云硬盘才有软链接。无法感知分区的格式化操作。</td>
+<td align="left">查看弹性云硬盘的软链接。<code>ls -l /dev/disk/by-id</code></td>
+</tr>
+<tr>
+<td align="left">使用文件系统的 UUID</td>
+<td align="left">可能会因文件系统的 UUID 变化而导致自动挂载设置失效。例如，重新格式化文件系统后，文件系统的 UUID 将会发生变化。</td>
+<td align="left">查看文件系统的 UUID。<code>blkid /dev/vdc1</code></td>
+</tr>
+<tr>
+<td align="left">使用设备名称</td>
+<td align="left">可能会因设备名称变化而导致自动挂载设置失效。例如，迁移数据时将云服务器上的弹性云硬盘卸载后再次挂载，操作系统再次识别到该文件系统时，名称可能会变化。</td>
+<td align="left">查看设备名称。<code>fdisk -l</code></td>
+</tr>
+</tbody></table>
+<ol start="16">
+<li>执行以下命令，备份<code>/etc/fstab</code>文件。以备份到<code>/home</code>目录下为例：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> -r /etc/fstab /home<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>执行以下命令，使用<code>VI</code>编辑器打开<code>/etc/fstab</code>文件。<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vi</span> /etc/fstab<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>按<code>i</code>，进入编辑模式。  </li>
+<li>将<code>光标移至文件末尾</code>，按<code>Enter</code>，添加如下内容。  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&lt;</span>设备信息<span class="token operator">></span> <span class="token operator">&lt;</span>挂载点<span class="token operator">></span> <span class="token operator">&lt;</span>文件系统格式<span class="token operator">></span> <span class="token operator">&lt;</span>文件系统安装选项<span class="token operator">></span> <span class="token operator">&lt;</span>文件系统转储频率<span class="token operator">></span> <span class="token operator">&lt;</span>启动时的文件系统检查顺序<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<ul>
+<li>（推荐）以使用弹性云硬盘的软链接自动挂载为例，结合前文示例则添加：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/dev/disk/by-id/virtio-disk-bm42ztpm-part1 /data/newpart2   ext4 defaults     <span class="token number">0</span>   <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>以使用磁盘分区的 UUID 自动挂载为例，结合前文示例则添加：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">UUID</span><span class="token operator">=</span>fc3f42cc-2093-49c7-b4fd-c616ba6165f4 /data/newpart2   ext4 defaults     <span class="token number">0</span>   <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>以使用设备名称自动挂载为例，结合前文示例则添加：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/dev/vdc1 /data/newpart2   ext4 defaults     <span class="token number">0</span>   <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<ol start="20">
+<li>按<code>Esc</code>，输入<code>:wq</code>，按<code>Enter</code>。<br>保存设置并退出编辑器。</li>
+<li>执行以下命令，检查<code>/etc/fstab</code>文件是否写入成功。<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mount</span> -a <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+如果运行通过则说明文件写入成功，新建的文件系统会在操作系统启动时自动挂载。  </li>
+</ol>
+<p>如果您有 补充 &amp; 更正 的意见和建议请留言评论，谢谢~  </p>
+
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Poyais</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://roxn.cn/posts/da12.html">https://roxn.cn/posts/da12.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Poyais</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">系统</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,wechat,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/2039.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="文件管理">
+                        
+                        <span class="card-title">文件管理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            高级文件管理
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/linux/" class="post-category">
+                                    linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">系统</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/c02d.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/drawing-bed/featureimages/37.jpg" class="responsive-img" alt="pod">
+                        
+                        <span class="card-title">pod</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Kubernetes创建pod
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/kubernetes/" class="post-category">
+                                    kubernetes
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">学习笔记</span>
+                    </a>
+                    
+                    <a href="/tags/Kubernetes/">
+                        <span class="chip bg-color">Kubernetes</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Roxn<br />'
+            + '文章作者: Poyais<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+    <footer class="page-footer bg-color">
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2020-2021</span>
+            
+
+            
+                <span id="icp"><img src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/medias/icp.png"
+                                    style="vertical-align: text-bottom;"/>
+                <a href="https://beian.miit.gov.cn" target="_blank">京ICP备20015925号</a>
+            </span>
+            
+            <br>
+
+<!--             <span id="year">2020</span>
+            <a href="/about" target="_blank">Poyais</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br> -->
+
+
+            <!-- 运行天数提醒. -->
+            <span <i class="fas fa-desktop"></i> </span>
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    function siteTime() {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2020";
+                        var startMonth = "8";
+                        var startDate = "1";
+                        var startHour = "8";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+                        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+                        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '小破站已勉强苟活 ' + diffDays + ' 天 ' + diffHours + ' 小时 ' + diffMinutes + ' 分钟 ' + diffSeconds + ' 秒🎊';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '小破站已勉强苟活 ' + diffYears + ' 年 ' + diffDays + ' 天 ' + diffHours + ' 小时 ' + diffMinutes + ' 分钟 ' + diffSeconds + ' 秒🎊';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    setInterval(siteTime, 1000);
+                </script>
+            <br>
+            
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点字数:&nbsp;<span
+                        class="white-color">153.9k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">🎉
+                <i class="far fa-eye"></i>&nbsp;访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">🎉
+                <i class="fas fa-users"></i>&nbsp;访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>🎉
+            </span>
+            
+
+
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的Git仓库" data-position="top" data-delay="50">
+        <i class="fab fa-git"></i>
+    </a>
+
+
+
+    <a href="mailto:158970251@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=158970251" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 158970251" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/jroxn/jroxn.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
